@@ -1,7 +1,5 @@
 import React from 'react';
-//import Sample from './components/Sample';
 import Layout from './components/Layout/Layout';
-//import './App.css';
 import BurgerBuilder from './components/containers/BurgerBuilder/BurgerBuilder';
 import Checkout from './components/containers/Checkout/Checkout';
 import { Route, Switch } from 'react-router-dom';

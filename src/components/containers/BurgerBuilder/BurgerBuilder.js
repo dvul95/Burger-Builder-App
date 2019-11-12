@@ -10,29 +10,11 @@ import withErrorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import axios from '../../../axios-orders';
 import * as burgerBuilderActions from '../../../store/actions/index';
 
-// const INGREDIENT_PRICES = {
-//     salad: 0.2,
-//     cheese: 0.9,
-//     mustard: 1.0,
-//     ketchup: 1.4,
-//     meat: 2.5,
-//     bacon: 1.0
-// }
 
 class BurgerBuilder extends Component {
 
 
     state = {
-        // ingredients:{ //
-        //     salad: 0,
-        //     bacon: 0,
-        //     cheese: 0,
-        //     mustard: 0,
-        //     ketchup: 0, 
-        //     meat: 0
-        // },
-        //totalPrice: 3,
-        // purchasable: false,
         purchasing: false,
         loading: false
     }
@@ -49,36 +31,6 @@ class BurgerBuilder extends Component {
         return sum > 0;
     }
 
-    // addIngredientHandler=(type) => {
-    //     const oldCount = this.props.ings[type]; 
-    //     const updatedCount = oldCount + 1;
-    //     const updatedIngredients = {
-    //         ...this.props.ings
-    //     };
-    //     updatedIngredients[type] = updatedCount;
-    //     const priceAddition =INGREDIENT_PRICES[type];
-    //     const oldPrice = this.state.totalPrice;
-    //     const newPrice = oldPrice + priceAddition;
-    //     this.setState({totalPrice: newPrice, ingredients: updatedIngredients });
-    //     this.updatePurchaseState(updatedIngredients);
-    // }
-
-    // removeIngredientHander = (type) =>{
-    //     const oldCount = this.props.ings[type]; 
-    //     if(oldCount <= 0){
-    //         return; 
-    //     }
-    //     const updatedCount = oldCount - 1;
-    //     const updatedIngredients = {
-    //         ...this.props.ings
-    //     };
-    //     updatedIngredients[type] = updatedCount;
-    //     const priceDeduction =INGREDIENT_PRICES[type];
-    //     const oldPrice = this.state.totalPrice;
-    //     const newPrice = oldPrice - priceDeduction;
-    //     this.setState({totalPrice: newPrice, ings: updatedIngredients });
-    //     this.updatePurchaseState(updatedIngredients);
-    // }
 
     purchaseHandler = () => {
         this.setState({ purchasing: true });
@@ -89,15 +41,6 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        // alert('You continue!');
-
-        //    const queryParams = [];
-        //    for(let i in this.props.ings){
-        //         queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.props.ings[i]
-        //             ));
-        //    }
-        //         queryParams.push('price=' + this.state.totalPrice)
-        //    const queryString = queryParams.join('&');
 
         this.props.history.push('/checkout');
     }

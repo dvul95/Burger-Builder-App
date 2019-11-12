@@ -27,7 +27,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
         }
 
         render() {
-            return (/* modalClosed (da se greska koja je ispisana ima mogucnost da se zatvori, kada se klikne na backdrop) */
+            return (
                 <Auxilary>
                     <Modal show={this.state.error}
                     modalClosed={this.errorConfirmedHandler}>  
